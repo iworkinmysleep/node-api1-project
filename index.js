@@ -72,7 +72,7 @@ server.delete("/api/users/:id", (req, res) => {
 	const deleted = users.find((user) => user.id === id);
 	try {
 		if (deleted) {
-			users.filter((user) => user.id !== id);
+			users = users.filter((user) => user.id !== id);
 			res.status(200).json(deleted);
 		} else {
 			res.status(404).json({
