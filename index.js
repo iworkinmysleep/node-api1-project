@@ -90,7 +90,7 @@ server.delete("/api/users/:id", (req, res) => {
 server.put("/api/users/:id", (req, res) => {
 	const { id } = req.params;
 	const updates = req.body;
-	const index = users.find((user) => user.id === id);
+	const index = users.findIndex((user) => user.id === id);
 	try {
 		if (index === -1) {
 			res.status(404).json({
